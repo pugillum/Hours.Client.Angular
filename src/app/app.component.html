@@ -1,12 +1,18 @@
-<h1>{{title}}</h1>
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    Sidenav
+  </md-sidenav>
 
-<div>
-  <a md-button color="primary">Flat button</a>
-  <a md-raised-button color="accent">Raised button</a>
-  <a md-fab color="primary">
-    <md-icon>check</md-icon>
-  </a>
-  <a md-mini-fab color="primary">
-    <md-icon>check</md-icon>
-  </a>
-</div>
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button> Angular Material2 Example App
+
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>
+
+  <div class="app-content">
+
+  </div>
+</md-sidenav-container>
